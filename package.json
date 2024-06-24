@@ -15,6 +15,7 @@
     "dotenv": "^16.4.5",
     "email-validator": "^2.0.4",
     "express": "^4.19.2",
+    "express-validator": "^7.1.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.3",

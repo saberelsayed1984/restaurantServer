@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors"); 
 require('dotenv').config();
 const usersRouter = require('./routres/routUser.js');
+const foodRouter = require('./routres/routFood.js');
 const app = express(); 
 app.use(cors({
     origin: "*",
@@ -14,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 app.use('/v1/api/users', usersRouter);
-app.use('/v2/password', usersRouter)
-// app.use('/v1/api/food', routerFood)
+app.use('/v2/password', usersRouter);
+app.use('/v1/api/food', foodRouter);
 app.get('/', (req, res) => {
     app.use((error, req, res, next) => {
         res.status(error.statusCode || 500).json({status: error.statusText || httpStatusText.ERROR,

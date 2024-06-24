@@ -1,6 +1,5 @@
 const mongoose = require ("mongoose");
 const validator = require ('validator');
-
 const { Schema } = mongoose ;
 const foodModel = new Schema ({
     title: {
@@ -27,7 +26,6 @@ const foodModel = new Schema ({
         }
     },
     })
+
 const Food = mongoose.model('Food', foodModel);
-module.exports = {
-    Food,
-}
+module.exports = Food;

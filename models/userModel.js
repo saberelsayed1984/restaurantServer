@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const validator = require('validator')
+const validator = require('validator');
+// const Schema = require ('../models/foodModel');
 const userSchema = new mongoose.Schema({
         id:{
             type: String},

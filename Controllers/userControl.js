@@ -199,7 +199,7 @@ if(!user.Verified){
         const token = await genrateJwt({email: user.email, id: user._id})
         await User.updateOne({_id:user._id }, {$set:{token}})
         user.token = token
-        return  res.status(500).json({ msg: "The success of the login process" ,
+        return  res.status(202).json({ msg: "The success of the login process" ,
             _id: user._id, name: user.Name, email : user.email ,token : user.token,profilePhoto: user.profilePhoto.url
     });
     } else {
@@ -232,7 +232,7 @@ const userId = req.params.userId;
         return res.status(400).send( {msg:'The name is already in use.'});
     } 
     await User.updateOne({_id: userId}, {$set:{...req.body}});
-    return res.status(200).json({status: httpStatusText.SUCCESS,  msg:"update succesfully" })
+    return res.status(200).json({  msg:"update succesfully" })
     });
 const deleteUser = asyncWrapper(async(req, res, next) => {
         await User.deleteOne ({_id: req.params.userId});
